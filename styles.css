@@ -1,0 +1,62 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: block;
+}
+.container {
+    display: grid;
+    grid:   "sidebar header"
+            "sidebar main" / 1fr 4fr;
+    gap: 15px;
+}
+.header {
+    border: solid 1px black;
+    grid-area: header;
+
+}
+
+.sidebar {
+    border: solid 1px black;
+    grid-area: sidebar;
+    background-color: rgb(29, 136, 224);
+    color: white;
+    display: grid;
+    justify-content: center;
+}
+
+.sidebar li {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+.sidebar li::before {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.sidebar li:nth-child(2)::before {
+    content: url(./images/home.svg);
+}
+
+.sidebar li:nth-child(7)::before {
+    content: url(./images/account-group-outline.svg);
+}
+.sidebar a {
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: white;
+}
+
+main {
+    border: solid 1px black;
+    grid-area: main;
+}
+
+ul {
+    list-style-type: none;
+}
+
