@@ -10,11 +10,10 @@
             "sidebar main" / 1fr 4fr;
 }
 .header {
-    border: solid 1px black;
     grid-area: header;
     display: grid;
     grid: 1fr 1fr / 2fr 1fr;
-}
+    box-shadow: 0px 1px 2px gray;}
 
 .header div {
     display: flex;
@@ -23,26 +22,54 @@
 .searchbar img {
     width: 2rem;
     border: 1px solid black;
-}
-.searchbar input {
-    width: 100%;
+    margin-left: 2rem;
 }
 
-.user-info img{
+.searchbar {
+    margin-top: 2rem;
+}
+.searchbar input {
+    display: flex;
+    flex: 1;
+    font-size: 1.5rem;
+    border: 0px;
+    background: rgb(217, 217, 217);
+    border-radius: 10px;
+    opacity: 0.5;
+}
+
+.user-info {
+    margin-top: 2rem;
+    justify-content: center;
+    gap: 2rem;
+    font-weight: bold;
+}
+.user-info img:first-child{
     width: 2rem;
     border: 1px solid black;
 }
+.user-info img:nth-child(2) {
+    width: 3rem;
+    border-radius: 50%;
+}
+
+.greeting {
+    gap: 2rem;
+}
 
 .greeting img{
-    width: 2rem;
+    width: 4rem;
+    border-radius: 50%;
+    margin-left: 2rem;
 }
 
 .greeting span:first-child {
-    font-size: 0.8rem;
-
+    font-size: 1rem;
+    font-weight: bold;
 }
 .greeting span:nth-child(3) {
-    font-size: 1rem;
+    font-size: 2rem;
+    font-weight: bold;
 }
 
 .header button {
@@ -93,7 +120,6 @@ main {
 }
 
 .sidebar {
-    border: solid 1px black;
     grid-area: sidebar;
     background-color: rgb(29, 136, 224);
     color: white;
