@@ -4,19 +4,92 @@
     padding: 0;
 }
 
-body {
-    display: block;
-}
 .container {
     display: grid;
     grid:   "sidebar header"
             "sidebar main" / 1fr 4fr;
-    gap: 15px;
 }
 .header {
     border: solid 1px black;
     grid-area: header;
+    display: grid;
+    grid: 1fr 1fr / 2fr 1fr;
+}
 
+.header div {
+    display: flex;
+    align-items: center;
+}
+.searchbar img {
+    width: 2rem;
+    border: 1px solid black;
+}
+.searchbar input {
+    width: 100%;
+}
+
+.user-info img{
+    width: 2rem;
+    border: 1px solid black;
+}
+
+.greeting img{
+    width: 2rem;
+}
+
+.greeting span:first-child {
+    font-size: 0.8rem;
+
+}
+.greeting span:nth-child(3) {
+    font-size: 1rem;
+}
+
+.header button {
+    background-color: aqua;
+    color: white;
+    padding: 0.5rem 2rem 0.5rem;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    border: 0px;
+    box-shadow: 0px 0px 10px black;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+main {
+    border: solid 1px black;
+    grid-area: main;
+    display: grid;
+    grid:   "projects announcements"
+            "projects trending" 
+            / 3fr 1fr;
+}
+
+.projects {
+    grid-area: projects;
+}
+
+.announcements {
+    grid-area: announcements;
+}
+
+.trending {
+    grid-area: trending;
+}
+.trending img {
+    width: 2rem;
+}
+.trending div {
+    display: flex;
+}
+.card {
+    height: 200px;
 }
 
 .sidebar {
@@ -31,32 +104,69 @@ body {
 .sidebar li {
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: 20px;
+    height: fit-content;
 }
 .sidebar li::before {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 2rem;
+    height: 2rem;
 }
 
+.sidebar li:nth-child(1)::before {
+    content: url(./images/odin-logo.svg);
+    width: auto;
+    height: auto;
+}
 .sidebar li:nth-child(2)::before {
     content: url(./images/home.svg);
 }
-
+.sidebar li:nth-child(3)::before {
+    content: url(./images/home.svg);
+}
+.sidebar li:nth-child(4)::before {
+    content: url(./images/home.svg);
+}
+.sidebar li:nth-child(5)::before {
+    content: url(./images/home.svg);
+}
+.sidebar li:nth-child(6)::before {
+    content: url(./images/home.svg);
+}
 .sidebar li:nth-child(7)::before {
+
     content: url(./images/account-group-outline.svg);
 }
+.sidebar li:nth-child(8)::before {
+    content: url(./images/home.svg);
+}
+.sidebar li:nth-child(9)::before {
+    content: url(./images/home.svg);
+}
+.sidebar li:nth-child(10)::before {
+    content: url(./images/home.svg);
+}
+
 .sidebar a {
-    font-size: 1.5rem;
     text-decoration: none;
     color: white;
+    font-size: 1.5rem;
 }
 
-main {
-    border: solid 1px black;
-    grid-area: main;
+.logo a{
+    font-size: 2.5rem;
 }
-
-ul {
+.sidebar ul {
     list-style-type: none;
+    display: grid;
+    grid-template-rows: repeat(10, min-content);
+    gap: 25px;
 }
 
+.projects {
+    display: grid;
+    grid: auto/ 1fr 1fr;
+}
+
+.projects p{
+    grid-column: 1 / -1;
+}
