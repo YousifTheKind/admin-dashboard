@@ -1,19 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital@0;1&display=swap');
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
+
+:root {
+    --color-theme: #4f46e5;
+    --white: #f8fafc;
+}
 .container {
     display: grid;
     grid:   "sidebar header"
             "sidebar main" / 1fr 4fr;
+    font-family: "Noto Sans" , sans-serif;
 }
 
 .header {
     grid-area: header;
     display: grid;
     grid: 1fr 1fr / 2fr 1fr;
-    box-shadow: 0px 1px 2px gray;
     padding: 15px;
 }
 
@@ -22,13 +29,10 @@
     align-items: center;
 }
 .searchbar img {
-    width: 2rem;
-    border: 1px solid black;
+    width: 1.3rem;
+    margin-right: 1rem;
 }
 
-.searchbar {
-
-}
 .searchbar input {
     display: flex;
     flex: 1;
@@ -45,8 +49,7 @@
     font-weight: bold;
 }
 .user-info img:first-child{
-    width: 2rem;
-    border: 1px solid black;
+    width: 1.4rem;
 }
 .user-info img:nth-child(2) {
     width: 3rem;
@@ -72,13 +75,13 @@
 }
 
 .header button {
-    background-color: aqua;
-    color: white;
+    background-color: var(--color-theme);
+    color: var(--white);
     padding: 0.5rem 2rem 0.5rem;
     border-radius: 10px;
     font-size: 0.8rem;
     border: 0px;
-    box-shadow: 0px 0px 10px black;
+    box-shadow: 0px 0px 5px black;
     font-weight: bold;
     cursor: pointer;
 }
@@ -94,7 +97,8 @@ main {
     grid:   "projects announcements"
             "projects trending" 
             / 3fr 1fr;
-    background-color: #cfcfcf;
+    background-color: #e2e8f0;
+    box-shadow: 0px 0px 5px black;
 }
 
 .projects {
@@ -108,55 +112,97 @@ main {
 .projects > p{
     grid-column: 1 / -1;
     font-size: 1.5rem;
+    font-weight: bold;
 }
 
 .card {
-    height: 200px;
-    background-color: white;
+    position: relative;
+    overflow: hidden;
+    height: 210px;
+    background-color: var(--white);
     margin: 5px;
     border-radius: 10px;
-    padding: 40px;
+    padding: 20px 10px;
+    border-left: solid 10px yellow;
+    box-shadow: 1px 1px 1px rgb(168, 168, 168);
+}
+.card > p:first-child {
+    font-weight: bold;
 }
 
+.card-icons {
+    display: flex;
+    position: absolute;
+    left: 20rem;
+    top: 10rem;
+    width: 2rem;
+    gap: 40px;
+}
 .announcements {
     grid-area: announcements;
     padding: 15px;
+}
+.announcements > p {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+.announcements-card {
+    font-size: 0.8rem;
+    box-shadow: 1px 1px 1px rgb(168, 168, 168);
 }
 .announcements-card div {
     padding: 15px;
 }
 
+.announcements-card .announcements-heading {
+    font-weight: bold;
+}
+.announcements-card .line-break {
+    border-top: 1px solid rgb(185, 185, 185);
+    width: 20rem;
+    padding: 0px;
+    margin: auto;
+}
+
 .announcements > div {
-    background-color: white;
+    background-color: var(--white);
     border-radius: 10px;
 }
 
 .trending {
     grid-area: trending;
     padding: 15px;
-
 }
+.trending-card {
+    box-shadow: 1px 1px 1px rgb(168, 168, 168);
+    padding: 20px 50px;
+}
+
 .trending img {
     width: 3rem;
     border-radius: 50%;
 }
 .trending-card div {
     display: flex;
-    padding: 10px;
+    font-size: 0.8rem;
+    gap: 10px;
+    align-items: flex-start;
+    padding: 5px;
 }
-.trending p {
-    margin-left: 15px;
+.trending > p {
+    font-weight: bold;
+    font-size: 1.5rem;
 }
 
 .trending > div {
-    background-color: white;
+    background-color: var(--white);
     border-radius: 10px;
 }
 
 .sidebar {
     grid-area: sidebar;
-    background-color: rgb(29, 136, 224);
-    color: white;
+    background-color: var(--color-theme);
+    color: var(--white);
     display: grid;
     justify-content: center;
 }
@@ -181,34 +227,33 @@ main {
     content: url(./images/home.svg);
 }
 .sidebar li:nth-child(3)::before {
-    content: url(./images/home.svg);
+    content: url(./images/card-account-details.svg);
 }
 .sidebar li:nth-child(4)::before {
-    content: url(./images/home.svg);
+    content: url(./images/message-reply.svg);
 }
 .sidebar li:nth-child(5)::before {
-    content: url(./images/home.svg);
+    content: url(./images/history.svg);
 }
 .sidebar li:nth-child(6)::before {
-    content: url(./images/home.svg);
+    content: url(./images/calendar-check.svg);
 }
 .sidebar li:nth-child(7)::before {
-
     content: url(./images/account-group-outline.svg);
 }
 .sidebar li:nth-child(8)::before {
-    content: url(./images/home.svg);
+    content: url(./images/cog.svg);
 }
 .sidebar li:nth-child(9)::before {
-    content: url(./images/home.svg);
+    content: url(./images/tooltip-question.svg);
 }
 .sidebar li:nth-child(10)::before {
-    content: url(./images/home.svg);
+    content: url(./images/security.svg);
 }
 
 .sidebar a {
     text-decoration: none;
-    color: white;
+    color: var(--white);
     font-size: 1.5rem;
 }
 
